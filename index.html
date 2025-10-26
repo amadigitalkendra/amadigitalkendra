@@ -19,51 +19,25 @@
 
   <body class="bg-gray-50 text-gray-800">
     <!-- Navbar -->
-    <header class="sticky top-0 z-30 bg-white/80 backdrop-blur shadow-sm">
+    <header class="sticky top-0 z-30 bg-gradient-to-r from-indigo-700 to-purple-600 text-white shadow-lg">
       <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <!-- Logo -->
         <div class="flex items-center gap-3">
-          <span
-            class="p-2 bg-gradient-to-br from-indigo-600 to-violet-500 rounded-lg shadow-md"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 7.5A2.5 2.5 0 015.5 5h13A2.5 2.5 0 0121 7.5v7a2.5 2.5 0 01-2.5 2.5H5.5A2.5 2.5 0 013 14.5v-7z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2 20.25h20"
-              />
-            </svg>
+          <span class="p-2 bg-white text-indigo-700 rounded-lg shadow-md">
+            <i class="fas fa-laptop fa-lg"></i>
           </span>
           <div>
-            <div class="text-lg font-semibold">
-              ADK
-              <span class="text-sm text-gray-500">(Ama Digital Kendra)</span>
-            </div>
-            <div class="text-xs text-gray-400">
-              Your Trusted Digital Service Center
-            </div>
+            <div class="text-lg font-semibold">ADK</div>
+            <div class="text-xs text-gray-200">Ama Digital Kendra</div>
           </div>
         </div>
 
-        <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
-          <a href="#services" class="hover:text-gray-900">Services</a>
-          <a href="#about" class="hover:text-gray-900">About</a>
-          <a
-            href="#contact"
-            class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md shadow-sm"
-            >Contact</a
-          >
+        <!-- Navigation (Top Right) -->
+        <nav class="flex items-center gap-6 text-sm">
+          <a href="#services" class="hover:text-gray-200 transition">Services</a>
+          <a href="#about" class="hover:text-gray-200 transition">About</a>
+          <a href="#contact" class="hover:text-gray-200 transition">Contact</a>
+          <a href="#map" class="hover:text-gray-200 transition">Map</a>
         </nav>
       </div>
     </header>
@@ -73,7 +47,7 @@
       class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal-down"
     >
       <div>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-indigo-800">
           Welcome to Ama Digital Kendra (ADK)
         </h1>
         <p class="mt-6 text-gray-600 text-lg">
@@ -85,13 +59,13 @@
         <div class="mt-8 flex gap-4">
           <a
             href="#services"
-            class="bg-indigo-600 text-white px-5 py-3 rounded-lg shadow hover:scale-105 transform transition"
+            class="bg-indigo-700 text-white px-5 py-3 rounded-lg shadow hover:scale-105 transform transition"
           >
             Explore Our Services →
           </a>
           <a
             href="#contact"
-            class="border border-gray-200 px-5 py-3 rounded-lg hover:bg-gray-50"
+            class="border border-indigo-700 text-indigo-700 px-5 py-3 rounded-lg hover:bg-indigo-100 transition"
             >Get in Touch</a
           >
         </div>
@@ -115,12 +89,12 @@
           </div>
           <div class="mt-4 text-gray-500 text-sm">Starting at</div>
           <div class="text-2xl font-bold">₹50 / Service</div>
-          <a href="#contact" class="block mt-6 bg-indigo-600 text-white py-3 rounded-lg"
+          <a href="#contact" class="block mt-6 bg-indigo-700 text-white py-3 rounded-lg"
             >Start Service Now</a
           >
         </div>
         <div
-          class="absolute -right-10 -bottom-8 w-44 h-28 rounded-2xl bg-gradient-to-br from-indigo-200 to-violet-200 opacity-40 blur-xl transform rotate-6"
+          class="absolute -right-10 -bottom-8 w-44 h-28 rounded-2xl bg-gradient-to-br from-indigo-300 to-purple-300 opacity-40 blur-xl transform rotate-6"
         ></div>
       </div>
     </section>
@@ -228,7 +202,7 @@
         </ul>
         <a
           href="#contact"
-          class="mt-6 inline-block px-5 py-3 bg-gray-800 text-white rounded-lg"
+          class="mt-6 inline-block px-5 py-3 bg-indigo-700 text-white rounded-lg"
           >Visit Our Center</a
         >
       </div>
@@ -289,11 +263,20 @@
           ></textarea>
           <button
             type="submit"
-            class="w-full bg-indigo-600 text-white py-3 rounded-lg"
+            class="w-full bg-indigo-700 text-white py-3 rounded-lg hover:scale-105 transform transition"
           >
             Send Message
           </button>
         </form>
+      </div>
+    </section>
+
+    <!-- Map Placeholder -->
+    <section id="map" class="max-w-7xl mx-auto px-6 py-12 reveal-down">
+      <h2 class="text-2xl font-bold mb-4 text-indigo-800">Our Location</h2>
+      <div class="h-96 w-full rounded-2xl shadow-lg bg-gray-100 flex items-center justify-center">
+        <!-- Attach your Google Map iframe here -->
+        <p class="text-gray-500">Map will appear here</p>
       </div>
     </section>
 
@@ -302,7 +285,7 @@
       <div class="max-w-7xl mx-auto px-6 py-8">
         <div class="flex flex-col items-start gap-4 text-left">
           <div class="flex items-center gap-3">
-            <span class="p-2 bg-indigo-600 rounded-md text-white">
+            <span class="p-2 bg-indigo-700 rounded-md text-white">
               <i class="fas fa-laptop"></i>
             </span>
             <div>
@@ -314,8 +297,8 @@
           <div
             class="flex flex-col md:flex-row gap-4 text-sm text-gray-600"
           >
-            <a href="#" class="hover:text-indigo-600">Terms & Conditions</a>
-            <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+            <a href="#" class="hover:text-indigo-700">Terms & Conditions</a>
+            <a href="#" class="hover:text-indigo-700">Privacy Policy</a>
           </div>
 
           <div
@@ -369,7 +352,6 @@
       window.addEventListener("scroll", revealOnScroll);
       revealOnScroll();
 
-      // Navbar scroll effect
       const header = document.querySelector("header");
       window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 30);
@@ -377,3 +359,4 @@
     </script>
   </body>
 </html>
+
