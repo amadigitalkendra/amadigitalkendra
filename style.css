@@ -1,171 +1,196 @@
-/* --------------------------------------------
-   AMA DIGITAL KENDRA (ADK)
-   Premium CSS Enhancements
--------------------------------------------- */
+/* === Ama Digital Kendra - Premium CSS === */
 
-/* Smooth scrolling for navbar links */
+/* General smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Better body feel */
+/* Premium body feel */
 body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #f9fafb;
+  color: #333;
 }
 
-/* Navbar styling improvements */
+/* Navbar enhancement */
 header {
-  transition: all 0.3s ease;
-}
-header.scrolled {
-  background: linear-gradient(90deg, #4338ca, #7e22ce);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(12px);
 }
 
-/* Logo Icon Fix */
-header i.fa-laptop,
-header i.fa-computer {
-  color: #4f46e5; /* Indigo */
-  font-size: 1.25rem;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+header.scrolled {
+  background: rgba(67, 56, 202, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-header .bg-white i {
+
+/* Navbar logo visibility fix */
+header .fa-laptop {
+  font-size: 1.3rem;
   color: #4f46e5;
 }
 
-/* Hover glow for navbar links */
-header nav a {
-  position: relative;
-}
-header nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: white;
-  transition: width 0.3s ease;
-}
-header nav a:hover::after {
-  width: 100%;
+header .p-2.bg-white {
+  background-color: white !important;
+  border: 2px solid #4f46e5;
 }
 
-/* Button hover effect */
+/* Buttons */
+a.bg-indigo-700,
+button.bg-indigo-700 {
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
 a.bg-indigo-700:hover,
 button.bg-indigo-700:hover {
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.5);
 }
 
-/* --------------------------------------------
-   Scroll Animation Effects
--------------------------------------------- */
+/* Card hover lift */
+.shadow:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
 
+/* ===== SCROLL ANIMATIONS ===== */
+
+/* Base state (hidden) */
 .reveal,
 .reveal-left,
 .reveal-right,
 .reveal-down {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  transition: all 0.8s ease;
 }
 
-.reveal-left {
-  transform: translateX(-50px);
-}
-.reveal-right {
-  transform: translateX(50px);
-}
+/* From bottom */
 .reveal-down {
-  transform: translateY(50px);
+  transform: translateY(80px);
 }
 
+/* From left */
+.reveal-left {
+  transform: translateX(-80px);
+}
+
+/* From right */
+.reveal-right {
+  transform: translateX(80px);
+}
+
+/* Active state (visible) */
 .reveal.active,
 .reveal-left.active,
 .reveal-right.active,
 .reveal-down.active {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate(0);
 }
 
-/* --------------------------------------------
-   Hero & Section Enhancements
--------------------------------------------- */
+/* ===== Hero Section Enhancements ===== */
+h1 {
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 section {
-  scroll-margin-top: 80px;
+  transition: all 0.5s ease-in-out;
 }
 
-h1, h2, h3 {
-  letter-spacing: -0.02em;
-}
-
-/* Subtle floating glow behind elements */
-section .shadow-2xl {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-section .shadow-2xl:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
-}
-
-/* --------------------------------------------
-   Footer
--------------------------------------------- */
-
+/* ===== Footer Styling ===== */
 footer {
-  background-color: #ffffff;
-  color: #4b5563;
+  border-top: 2px solid #f3f4f6;
+  background: linear-gradient(to right, #ffffff, #f8f8ff);
 }
+
+footer a {
+  transition: color 0.3s ease;
+}
+
 footer a:hover {
   color: #4f46e5;
 }
 
-/* Footer logo icon fix */
-footer i.fa-laptop {
-  color: #ffffff;
-  background-color: #4f46e5;
-  border-radius: 6px;
-  padding: 6px;
-}
-
-/* --------------------------------------------
-   Custom Scrollbar (Premium Look)
--------------------------------------------- */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #f3f4f6;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #4f46e5, #7c3aed);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #4338ca, #6d28d9);
-}
-
-/* --------------------------------------------
-   Contact Form Animation
--------------------------------------------- */
-form input:focus,
-form textarea:focus {
+/* ===== Contact Section ===== */
+input,
+textarea {
   outline: none;
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
-/* --------------------------------------------
-   Buttons general hover scaling
--------------------------------------------- */
-a, button {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-a:hover, button:hover {
-  transform: scale(1.03);
+input:focus,
+textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.4);
 }
 
+/* ===== Responsive Layout Fixes ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  header .max-w-7xl {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+  }
+
+  .text-sm {
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* ===== Animations for Premium Feel ===== */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+button:hover,
+a:hover {
+  animation: float 1.2s ease-in-out infinite;
+}
+
+/* Glow hover for image */
+img:hover {
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+  transform: scale(1.02);
+  transition: all 0.4s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#4f46e5, #7c3aed);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
