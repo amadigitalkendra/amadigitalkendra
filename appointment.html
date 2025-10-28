@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome for icons -->
     <script
       src="https://kit.fontawesome.com/a2e0e6ad8d.js"
       crossorigin="anonymous"
@@ -40,10 +40,8 @@
         </div>
 
         <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="index.html" class="hover:text-gray-200 transition"
-            >Home</a
-          >
-          <a href="#appointment" class="hover:text-gray-200 transition"
+          <a href="index.html" class="hover:text-gray-200 transition">Home</a>
+          <a href="appointment.html" class="hover:text-gray-200 transition"
             >Appointment</a
           >
         </nav>
@@ -51,28 +49,17 @@
     </header>
 
     <!-- Appointment Form -->
-    <section
-      id="appointment"
-      class="max-w-4xl mx-auto px-6 py-16 reveal-down"
-    >
-      <h2
-        class="text-3xl font-bold text-center text-indigo-700 mb-2"
-      >
+    <section id="appointment" class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-center text-indigo-700 mb-2">
         Book an Appointment
       </h2>
       <p class="text-center text-gray-600 mb-8">
-        Please fill the details below to book your appointment with Ama Digital
-        Kendra (ADK).
+        Please fill in your details to book your appointment with Ama Digital
+        Kendra.
       </p>
 
-      <div
-        class="bg-white rounded-2xl shadow-lg p-8 md:p-10 space-y-6"
-      >
-        <form
-          id="appointmentForm"
-          onsubmit="sendToWhatsApp(event)"
-          class="space-y-4"
-        >
+      <div class="bg-white rounded-2xl shadow-lg p-8 md:p-10 space-y-6">
+        <form id="appointmentForm" class="space-y-4">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1"
@@ -177,7 +164,8 @@
 
           <div class="text-center mt-6">
             <button
-              type="submit"
+              type="button"
+              onclick="sendToWhatsApp()"
               class="bg-indigo-700 text-white px-6 py-3 rounded-lg shadow hover:scale-105 transform transition"
             >
               Book Appointment via WhatsApp
@@ -198,23 +186,24 @@
       </div>
     </footer>
 
-    <!-- WhatsApp Integration Script -->
+    <!-- WhatsApp Script -->
     <script>
-      function sendToWhatsApp(e) {
-        e.preventDefault();
+      function sendToWhatsApp() {
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const service = document.getElementById("service").value.trim();
+        const date = document.getElementById("date").value.trim();
+        const time = document.getElementById("time").value.trim();
 
-        const name = document.getElementById("name").value;
-        const phone = document.getElementById("phone").value;
-        const email = document.getElementById("email").value;
-        const service = document.getElementById("service").value;
-        const date = document.getElementById("date").value;
-        const time = document.getElementById("time").value;
+        if (!name || !phone || !email || !service || !date || !time) {
+          alert("Please fill all details before submitting!");
+          return;
+        }
 
-        const message = `📅 *New Appointment Request*%0A%0A👤 Name: ${name}%0A📞 Phone: ${phone}%0A✉️ Email: ${email}%0A🧾 Service: ${service}%0A📆 Date: ${date}%0A⏰ Time: ${time}`;
-
-        const url = `https://wa.me/9777828633?text=${message}`;
-
-        window.open(url, "_blank");
+        const msg = `📅 *New Appointment*%0A👤 Name: ${name}%0A📞 Phone: ${phone}%0A✉️ Email: ${email}%0A🧾 Service: ${service}%0A📆 Date: ${date}%0A⏰ Time: ${time}`;
+        const waLink = `https://wa.me/9777828633?text=${msg}`;
+        window.open(waLink, "_blank");
       }
     </script>
   </body>
