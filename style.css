@@ -1,87 +1,126 @@
-/* === Ama Digital Kendra - Premium CSS === */
+/* =======================================
+   Ama Digital Kendra (ADK) - Premium v2
+   ======================================= */
 
-/* General smooth scroll */
+/* === GLOBAL SETTINGS === */
 html {
   scroll-behavior: smooth;
 }
 
-/* Premium body feel */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f9fafb;
-  color: #333;
+  background-color: #f9fafc;
+  color: #222;
+  overflow-x: hidden;
 }
 
-/* Navbar enhancement */
+/* === NAVBAR === */
 header {
   transition: all 0.4s ease;
-  backdrop-filter: blur(12px);
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 header.scrolled {
   background: rgba(67, 56, 202, 0.9);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* Navbar logo visibility fix */
+/* Logo visibility fix */
 header .fa-laptop {
-  font-size: 1.3rem;
   color: #4f46e5;
+  font-size: 1.5rem;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
 }
 
-header .p-2.bg-white {
-  background-color: white !important;
-  border: 2px solid #4f46e5;
+/* Navbar links */
+nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
 }
 
-/* Buttons */
+/* === BUTTONS === */
 a.bg-indigo-700,
 button.bg-indigo-700 {
-  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
   transition: all 0.4s ease;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
 }
 
 a.bg-indigo-700:hover,
 button.bg-indigo-700:hover {
-  transform: scale(1.07);
-  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.5);
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #7c3aed, #4f46e5);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
 }
 
-/* Card hover lift */
-.shadow:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+/* Hover wave pulse */
+a.bg-indigo-700:active,
+button.bg-indigo-700:active {
+  animation: clickPulse 0.5s ease;
 }
 
-/* ===== SCROLL ANIMATIONS ===== */
+@keyframes clickPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.5);
+  }
+  70% {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-/* Base state (hidden) */
+/* === HERO SECTION === */
+h1 {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1.2s ease both;
+}
+
+/* === SCROLL REVEAL ANIMATIONS === */
 .reveal,
 .reveal-left,
 .reveal-right,
 .reveal-down {
   opacity: 0;
   position: relative;
-  transition: all 0.8s ease;
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* From bottom */
 .reveal-down {
   transform: translateY(80px);
 }
 
-/* From left */
 .reveal-left {
   transform: translateX(-80px);
 }
 
-/* From right */
 .reveal-right {
   transform: translateX(80px);
 }
 
-/* Active state (visible) */
 .reveal.active,
 .reveal-left.active,
 .reveal-right.active,
@@ -90,107 +129,133 @@ button.bg-indigo-700:hover {
   transform: translate(0);
 }
 
-/* ===== Hero Section Enhancements ===== */
-h1 {
-  background: linear-gradient(to right, #4f46e5, #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* === FADE + ZOOM ON SCROLL === */
+.reveal.active {
+  animation: fadeZoom 1s ease-in-out both;
 }
 
-section {
-  transition: all 0.5s ease-in-out;
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* ===== Footer Styling ===== */
-footer {
-  border-top: 2px solid #f3f4f6;
-  background: linear-gradient(to right, #ffffff, #f8f8ff);
+/* === FLOATING ELEMENTS === */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.hero-float {
+  animation: float 4s ease-in-out infinite;
 }
 
-footer a {
-  transition: color 0.3s ease;
+/* === CARD HOVER ANIMATION === */
+.shadow:hover {
+  transform: translateY(-8px) scale(1.02);
+  transition: all 0.4s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-footer a:hover {
-  color: #4f46e5;
+/* === IMAGE ENHANCEMENT === */
+img {
+  transition: all 0.4s ease;
+}
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(79, 70, 229, 0.5);
 }
 
-/* ===== Contact Section ===== */
+/* === CONTACT INPUTS === */
 input,
 textarea {
-  outline: none;
-  border-radius: 8px;
+  border: 1px solid #ddd;
   transition: all 0.3s ease;
 }
-
 input:focus,
 textarea:focus {
   border-color: #4f46e5;
-  box-shadow: 0 0 6px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
 }
 
-/* ===== Responsive Layout Fixes ===== */
+/* === FOOTER === */
+footer {
+  background: linear-gradient(to right, #ffffff, #f7f8ff);
+  border-top: 2px solid #eee;
+}
+footer a {
+  transition: all 0.3s ease;
+}
+footer a:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE FIXES === */
 @media (max-width: 768px) {
   h1 {
     font-size: 1.9rem;
-  }
-
-  header .max-w-7xl {
-    flex-wrap: wrap;
   }
 
   nav {
     display: none;
   }
 
-  .text-lg {
-    font-size: 1rem;
+  header .max-w-7xl {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .text-sm {
-    font-size: 0.85rem;
+  .text-lg {
+    font-size: 1rem;
   }
 
   section {
     padding: 2rem 1.25rem;
   }
-}
 
-/* ===== Animations for Premium Feel ===== */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(0px);
+  button,
+  a.bg-indigo-700 {
+    width: 100%;
+    text-align: center;
   }
 }
 
-button:hover,
-a:hover {
-  animation: float 1.2s ease-in-out infinite;
+/* === PAGE TRANSITION EFFECT === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Glow hover for image */
-img:hover {
-  box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
-  transform: scale(1.02);
-  transition: all 0.4s ease;
+section {
+  animation: fadeIn 1.2s ease both;
 }
 
-/* Scrollbar styling */
+/* === SCROLLBAR STYLING === */
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(#4f46e5, #7c3aed);
   border-radius: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: #f3f4f6;
 }
