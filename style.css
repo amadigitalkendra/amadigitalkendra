@@ -1,242 +1,59 @@
-/* =======================================
-   Ama Digital Kendra (ADK) - Premium v2
-   ======================================= */
+/* 🌐 Ama Digital Kendra – Premium Style */
+/* Responsive + Animated + Professional Look */
 
-/* === GLOBAL SETTINGS === */
+/* Global Settings */
 html {
   scroll-behavior: smooth;
 }
-
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f9fafc;
-  color: #222;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
   overflow-x: hidden;
 }
 
-/* === NAVBAR === */
-header {
-  transition: all 0.4s ease;
-  background: linear-gradient(to right, #4f46e5, #7c3aed);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-}
-
+/* Navbar */
 header.scrolled {
-  background: rgba(67, 56, 202, 0.9);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg, #4338ca, #6d28d9);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease-in-out;
 }
 
-/* Logo visibility fix */
-header .fa-laptop {
-  color: #4f46e5;
-  font-size: 1.5rem;
-  background: #ffffff;
-  padding: 8px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
-}
-
-/* Navbar links */
-nav a {
+header a {
   position: relative;
-  transition: all 0.3s ease;
 }
-nav a::after {
+header a::after {
   content: "";
   position: absolute;
+  bottom: -2px;
   left: 0;
-  bottom: -3px;
   width: 0%;
   height: 2px;
-  background: #fff;
+  background-color: #fff;
   transition: width 0.3s;
 }
-nav a:hover::after {
+header a:hover::after {
   width: 100%;
 }
 
-/* === BUTTONS === */
-a.bg-indigo-700,
-button.bg-indigo-700 {
-  background: linear-gradient(90deg, #4f46e5, #7c3aed);
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+/* Buttons */
+button, a {
+  transition: all 0.3s ease;
+}
+button:hover, a:hover {
+  transform: scale(1.05);
 }
 
-a.bg-indigo-700:hover,
-button.bg-indigo-700:hover {
-  transform: scale(1.08);
-  background: linear-gradient(90deg, #7c3aed, #4f46e5);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
-}
-
-/* Hover wave pulse */
-a.bg-indigo-700:active,
-button.bg-indigo-700:active {
-  animation: clickPulse 0.5s ease;
-}
-
-@keyframes clickPulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.5);
-  }
-  70% {
-    transform: scale(0.97);
-    box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* === HERO SECTION === */
-h1 {
-  background: linear-gradient(90deg, #4f46e5, #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeIn 1.2s ease both;
-}
-
-/* === SCROLL REVEAL ANIMATIONS === */
-.reveal,
-.reveal-left,
-.reveal-right,
-.reveal-down {
-  opacity: 0;
-  position: relative;
-  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.reveal-down {
-  transform: translateY(80px);
-}
-
-.reveal-left {
-  transform: translateX(-80px);
-}
-
-.reveal-right {
-  transform: translateX(80px);
-}
-
-.reveal.active,
-.reveal-left.active,
-.reveal-right.active,
-.reveal-down.active {
-  opacity: 1;
-  transform: translate(0);
-}
-
-/* === FADE + ZOOM ON SCROLL === */
-.reveal.active {
-  animation: fadeZoom 1s ease-in-out both;
-}
-
-@keyframes fadeZoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* === FLOATING ELEMENTS === */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.hero-float {
-  animation: float 4s ease-in-out infinite;
-}
-
-/* === CARD HOVER ANIMATION === */
+/* Card & Box hover */
 .shadow:hover {
-  transform: translateY(-8px) scale(1.02);
-  transition: all 0.4s ease;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 25px rgba(67, 56, 202, 0.15);
+  transition: 0.3s ease-in-out;
 }
 
-/* === IMAGE ENHANCEMENT === */
-img {
-  transition: all 0.4s ease;
-}
-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(79, 70, 229, 0.5);
-}
-
-/* === CONTACT INPUTS === */
-input,
-textarea {
-  border: 1px solid #ddd;
-  transition: all 0.3s ease;
-}
-input:focus,
-textarea:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
-}
-
-/* === FOOTER === */
-footer {
-  background: linear-gradient(to right, #ffffff, #f7f8ff);
-  border-top: 2px solid #eee;
-}
-footer a {
-  transition: all 0.3s ease;
-}
-footer a:hover {
-  color: #4f46e5;
-  text-decoration: underline;
-}
-
-/* === RESPONSIVE FIXES === */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.9rem;
-  }
-
-  nav {
-    display: none;
-  }
-
-  header .max-w-7xl {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .text-lg {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 2rem 1.25rem;
-  }
-
-  button,
-  a.bg-indigo-700 {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* === PAGE TRANSITION EFFECT === */
-@keyframes fadeIn {
+/* Animations */
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -244,18 +61,144 @@ footer a:hover {
   }
 }
 
-section {
-  animation: fadeIn 1.2s ease both;
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* === SCROLLBAR STYLING === */
-::-webkit-scrollbar {
-  width: 8px;
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(#4f46e5, #7c3aed);
-  border-radius: 8px;
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(99,102,241,0.2); }
+  50% { box-shadow: 0 0 20px rgba(99,102,241,0.5); }
+  100% { box-shadow: 0 0 5px rgba(99,102,241,0.2); }
 }
-::-webkit-scrollbar-track {
-  background: #f3f4f6;
+
+/* Scroll Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeUp 1s ease forwards;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.9s ease;
+}
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeLeft 1s ease forwards;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.9s ease;
+}
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeRight 1s ease forwards;
+}
+
+.reveal-down {
+  opacity: 0;
+  transform: translateY(-60px);
+  transition: all 0.9s ease;
+}
+.reveal-down.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Hover glow for hero buttons */
+a.bg-indigo-700:hover {
+  animation: glow 2s infinite;
+}
+
+/* Footer */
+footer {
+  background-color: #ffffff;
+  color: #555;
+}
+footer a {
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: #4f46e5;
+}
+
+/* Form Fields */
+input, textarea, select {
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+  transform: scale(1.01);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.9rem !important;
+  }
+  h2 {
+    font-size: 1.3rem !important;
+  }
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  .max-w-7xl {
+    padding: 0 1rem !important;
+  }
+  header {
+    padding: 0.8rem 1rem !important;
+  }
+  footer {
+    text-align: left;
+    padding: 2rem 1rem;
+  }
+}
+
+/* Image and card animations */
+img {
+  transition: transform 0.4s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Floating Scroll Glow Effect */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+section:hover {
+  animation: float 2s ease-in-out infinite;
 }
