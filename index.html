@@ -65,7 +65,7 @@
             Explore Our Services →
           </a>
           <a
-            href="#contact"
+            href="appointment.html"
             class="border border-indigo-700 text-indigo-700 px-5 py-3 rounded-lg hover:bg-indigo-100 transition"
           >
             Get in Touch
@@ -208,21 +208,28 @@
           </div>
         </div>
 
-        <form class="space-y-4">
+        <!-- WhatsApp Contact Form -->
+        <form class="space-y-4" onsubmit="sendToWhatsApp(event)">
           <input
             type="text"
+            id="name"
             placeholder="Your Name"
             class="w-full border border-gray-200 rounded-lg px-4 py-2"
+            required
           />
           <input
             type="email"
+            id="email"
             placeholder="Your Email"
             class="w-full border border-gray-200 rounded-lg px-4 py-2"
+            required
           />
           <textarea
+            id="message"
             placeholder="Your Message"
             rows="4"
             class="w-full border border-gray-200 rounded-lg px-4 py-2"
+            required
           ></textarea>
           <button
             type="submit"
@@ -306,6 +313,18 @@
       window.addEventListener("scroll", () => {
         header.classList.toggle("scrolled", window.scrollY > 30);
       });
+
+      // WhatsApp contact form
+      function sendToWhatsApp(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        const text = `📩 *New Inquiry from Ama Digital Kendra*%0A%0A👤 Name: ${name}%0A📧 Email: ${email}%0A💬 Message: ${message}`;
+        const whatsappURL = `https://wa.me/919777828633?text=${text}`;
+        window.open(whatsappURL, "_blank");
+      }
     </script>
   </body>
 </html>
