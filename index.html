@@ -4,27 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ama Digital Kendra (ADK)</title>
+
+    <!-- Tailwind CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/a2e0e6ad8d.js"
       crossorigin="anonymous"
     ></script>
 
-    <!-- ✅ Link to external custom stylesheet -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="bg-gray-50 text-gray-800">
     <!-- Navbar -->
     <header class="sticky top-0 z-30 bg-gradient-to-r from-indigo-700 to-purple-600 text-white shadow-lg">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <!-- ✅ Fixed Logo -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <!-- Logo -->
         <div class="flex items-center gap-3">
-          <span class="p-2 bg-white text-indigo-700 rounded-lg shadow-md flex items-center justify-center">
-            <i class="fas fa-laptop fa-xl" style="color:#4f46e5;"></i>
+          <span class="p-2 bg-white text-indigo-700 rounded-lg shadow-md">
+            <i class="fas fa-laptop fa-lg"></i>
           </span>
           <div>
             <div class="text-lg font-semibold">ADK</div>
@@ -32,20 +36,17 @@
           </div>
         </div>
 
-        <!-- Navigation (Top Right) -->
-        <nav class="flex items-center gap-6 text-sm">
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="#services" class="hover:text-gray-200 transition">Services</a>
           <a href="#about" class="hover:text-gray-200 transition">About</a>
           <a href="#contact" class="hover:text-gray-200 transition">Contact</a>
-          <a href="https://maps.app.goo.gl/Rmc6SD34PqxAemKV8?g_st=aw" target="_blank" class="hover:text-gray-200 transition">Map</a>
         </nav>
       </div>
     </header>
 
     <!-- Hero -->
-    <section
-      class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal-down"
-    >
+    <section class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal-down">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-indigo-800">
           Welcome to Ama Digital Kendra (ADK)
@@ -56,7 +57,7 @@
           paperwork and online services with trust and speed.
         </p>
 
-        <div class="mt-8 flex gap-4">
+        <div class="mt-8 flex flex-wrap gap-4">
           <a
             href="#services"
             class="bg-indigo-700 text-white px-5 py-3 rounded-lg shadow hover:scale-105 transform transition"
@@ -66,15 +67,14 @@
           <a
             href="#contact"
             class="border border-indigo-700 text-indigo-700 px-5 py-3 rounded-lg hover:bg-indigo-100 transition"
-            >Get in Touch</a
           >
+            Get in Touch
+          </a>
         </div>
       </div>
 
       <div class="relative mx-auto max-w-md reveal-right">
-        <div
-          class="rounded-3xl p-6 shadow-2xl bg-white ring-1 ring-gray-100 text-center"
-        >
+        <div class="rounded-3xl p-6 shadow-2xl bg-white ring-1 ring-gray-100 text-center">
           <h3 class="text-lg font-semibold mb-2">Digital Service Packages</h3>
           <p class="text-gray-500 mb-4">Fast processing, Reliable support</p>
           <div class="grid grid-cols-2 gap-4 text-sm">
@@ -89,60 +89,46 @@
           </div>
           <div class="mt-4 text-gray-500 text-sm">Starting at</div>
           <div class="text-2xl font-bold">₹50 / Service</div>
-          <a href="#contact" class="block mt-6 bg-indigo-700 text-white py-3 rounded-lg"
-            >Start Service Now</a
-          >
+          <a href="#contact" class="block mt-6 bg-indigo-700 text-white py-3 rounded-lg hover:scale-105 transition">
+            Start Service Now
+          </a>
         </div>
-        <div
-          class="absolute -right-10 -bottom-8 w-44 h-28 rounded-2xl bg-gradient-to-br from-indigo-300 to-purple-300 opacity-40 blur-xl transform rotate-6"
-        ></div>
       </div>
     </section>
 
     <!-- Services -->
-    <section
-      id="services"
-      class="max-w-7xl mx-auto px-6 py-12 reveal-left"
-    >
+    <section id="services" class="max-w-7xl mx-auto px-6 py-12 reveal-left">
       <h3 class="text-sm text-indigo-600 font-semibold">Our Services</h3>
-      <h2 class="text-2xl md:text-3xl font-bold mt-2">
-        Government & Digital Services We Provide
-      </h2>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2">Government & Digital Services We Provide</h2>
 
-      <div
-        class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm"
-      >
-        <div
-          class="p-6 bg-white rounded-2xl shadow hover:-translate-y-1 transition"
-        >
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+        <div class="p-6 bg-white rounded-2xl shadow hover:-translate-y-1 transition">
           <ul class="space-y-2">
             <li>✅ PAN Card</li>
             <li>✅ Food Licence</li>
             <li>✅ Passport Apply</li>
             <li>✅ Trade Licence</li>
             <li>✅ Voter ID</li>
-            <li>✅ All RTO Work (Driving Licence, RC Renew & All Vehicle)</li>
+            <li>✅ All RTO Work</li>
             <li>✅ Passport Photo</li>
             <li>✅ Insurance</li>
           </ul>
         </div>
-        <div
-          class="p-6 bg-white rounded-2xl shadow hover:-translate-y-1 transition"
-        >
+
+        <div class="p-6 bg-white rounded-2xl shadow hover:-translate-y-1 transition">
           <ul class="space-y-2">
             <li>✅ Senior Citizen Card</li>
-            <li>✅ All Municipality Service</li>
+            <li>✅ Municipality Services</li>
             <li>✅ Police Verification</li>
-            <li>✅ Death / Birth Certificate</li>
-            <li>✅ Flight, Train, Bus Ticket</li>
-            <li>✅ Caste, Income, Residence Apply & Correction</li>
-            <li>✅ Udyog Aadhaar Certificate Apply</li>
+            <li>✅ Birth/Death Certificate</li>
+            <li>✅ Tickets (Flight, Train, Bus)</li>
+            <li>✅ Caste, Income, Residence Apply</li>
+            <li>✅ Udyog Aadhaar</li>
             <li>✅ Electricity Apply</li>
           </ul>
         </div>
-        <div
-          class="p-6 bg-white rounded-2xl shadow hover:-translate-y-1 transition"
-        >
+
+        <div class="p-6 bg-white rounded-2xl shadow hover:-translate-y-1 transition">
           <ul class="space-y-2">
             <li>✅ Account Opening / Loan Apply</li>
             <li>✅ Marriage Certificate</li>
@@ -150,40 +136,15 @@
             <li>✅ GST Apply</li>
             <li>✅ SCB Ticket Apply</li>
             <li>✅ IT File Return</li>
-            <li>✅ All Type Govt. Form Apply</li>
-            <li>✅ All EPFO Work / Life Certificate</li>
-          </ul>
-        </div>
-        <div
-          class="p-6 bg-white rounded-2xl shadow hover:-translate-y-1 transition"
-        >
-          <ul class="space-y-2">
-            <li>✅ Ayushman Card Apply</li>
-            <li>✅ Labour Card (New & Renew)</li>
-            <li>✅ Madhubabu Pension</li>
-            <li>✅ Handicapped Certificate</li>
-            <li>✅ Foreign Money Exchange</li>
-            <li>✅ Domicile Certificate</li>
-            <li>✅ SBI FASTag</li>
-            <li>✅ Drug Licence</li>
-          </ul>
-        </div>
-        <div
-          class="p-6 bg-white rounded-2xl shadow hover:-translate-y-1 transition"
-        >
-          <ul class="space-y-2">
-            <li>✅ New LIC Insurance</li>
-            <li>✅ Vehicle Insurance</li>
+            <li>✅ All Govt. Forms</li>
+            <li>✅ EPFO / Life Certificate</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section
-      id="about"
-      class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center reveal-right"
-    >
+    <section id="about" class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center reveal-right">
       <div>
         <h3 class="text-sm text-indigo-600 font-semibold">About ADK</h3>
         <h2 class="text-2xl md:text-3xl font-bold mt-2">
@@ -204,32 +165,26 @@
           href="https://maps.app.goo.gl/Rmc6SD34PqxAemKV8?g_st=aw"
           target="_blank"
           class="mt-6 inline-block px-5 py-3 bg-indigo-700 text-white rounded-lg hover:scale-105 transform transition"
-          >Visit Our Center</a
         >
+          Visit Our Center
+        </a>
       </div>
-     <div>
-  <!-- If image is available, it will show below -->
-  <div
-    class="h-64 rounded-2xl overflow-hidden shadow-lg flex items-center justify-center bg-gradient-to-br from-white to-indigo-50"
-  >
-    <img
-      src="office.jpg"
-      alt="ADK Office / Customer Desk"
-      class="w-full h-full object-cover"
-      onerror="this.style.display='none'; this.parentElement.innerHTML='ADK Office / Customer Desk';"
-    />
-  </div>
-</div>
+      <div>
+        <div
+          class="h-64 rounded-2xl bg-gradient-to-br from-white to-indigo-50 shadow-lg flex items-center justify-center text-gray-400 overflow-hidden"
+        >
+          <img
+            src="your-office-image.jpg"
+            alt="ADK Office"
+            class="object-cover w-full h-full"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- Contact -->
-    <section
-      id="contact"
-      class="max-w-7xl mx-auto px-6 py-12 reveal-left"
-    >
-      <div
-        class="bg-white rounded-2xl shadow-lg p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8"
-      >
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-12 reveal-left">
+      <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 class="text-sm text-indigo-600 font-semibold">Contact Us</h3>
           <h2 class="text-2xl font-bold mt-2">Reach Ama Digital Kendra</h2>
@@ -239,19 +194,20 @@
           </p>
           <div class="mt-6 space-y-3 text-sm text-gray-700">
             <div>
-              <i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i> Main
-              Road, Near Bus Stand, Bhubaneswar, Odisha
+              <i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i>
+              Main Road, Near Bus Stand, Bhubaneswar, Odisha
             </div>
             <div>
               <i class="fas fa-envelope text-indigo-600 mr-2"></i>
               amadigitalkendra@gmail.com
             </div>
             <div>
-              <i class="fas fa-phone-alt text-indigo-600 mr-2"></i> +91
-              9876543210
+              <i class="fas fa-phone-alt text-indigo-600 mr-2"></i>
+              +91 9876543210
             </div>
           </div>
         </div>
+
         <form class="space-y-4">
           <input
             type="text"
@@ -283,8 +239,8 @@
       <div class="max-w-7xl mx-auto px-6 py-8">
         <div class="flex flex-col items-start gap-4 text-left">
           <div class="flex items-center gap-3">
-            <span class="p-2 bg-indigo-700 rounded-md text-white flex items-center justify-center">
-              <i class="fas fa-laptop fa-lg"></i>
+            <span class="p-2 bg-indigo-700 rounded-md text-white">
+              <i class="fas fa-laptop"></i>
             </span>
             <div>
               <div class="font-semibold">ADK</div>
@@ -307,8 +263,8 @@
               amadigitalkendra@gmail.com
             </div>
             <div>
-              <i class="fas fa-phone-alt text-indigo-600 mr-2"></i> +91
-              9876543210
+              <i class="fas fa-phone-alt text-indigo-600 mr-2"></i>
+              +91 9876543210
             </div>
           </div>
         </div>
@@ -323,7 +279,7 @@
       </div>
     </footer>
 
-    <!-- ✅ Scroll Animation Script -->
+    <!-- Scroll Animation Script -->
     <script>
       const reveals = document.querySelectorAll(
         ".reveal, .reveal-left, .reveal-right, .reveal-down"
@@ -353,4 +309,3 @@
     </script>
   </body>
 </html>
-
